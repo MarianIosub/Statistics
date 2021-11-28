@@ -6,8 +6,7 @@ import matplotlib.pyplot as plt
 
 
 class StatisticsUtils:
-    def __init__(self, filepath, chosen_column_index):
-        self.chosen_column_index = chosen_column_index
+    def __init__(self, filepath):
         self.header = []
         self.ages = []
         self.nationalities = []
