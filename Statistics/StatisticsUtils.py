@@ -42,34 +42,24 @@ class StatisticsUtils:
     def mean(self, column_index):
         if column_index in [0, 2]:
             print("Media coloanei " + str(column_index) + " este: " + str(numpy.mean(self.columns[column_index])))
-        else:
-            print(f"Nu se poate printa media pentru avast coloana: {column_index}")
 
     def standard_deviation(self, column_index):
         if column_index in [0, 2]:
             print("Deviatia standard a coloanei " + str(column_index) + " este: " + str(
                 statistics.stdev(self.columns[column_index])))
-        else:
-            print(f"Nu se poate printa deviatia standard pentru aceasta coloana: {column_index}")
 
     def median(self, column_index):
         if column_index in [0, 2]:
             print("Mediana coloanei " + str(column_index) + " este: " + str(
                 statistics.median(self.columns[column_index])))
-        else:
-            print(f"Nu se poate printa mediana pentru aceasta coloana: {column_index}")
 
     def column_min(self, column_index):
         if column_index in [0, 2]:
             print("Minimul coloanei " + str(column_index) + " este: " + str(min(self.columns[column_index])))
-        else:
-            print(f"Nu se poate printa minimul pentru aceasta coloana: {column_index}")
 
     def column_max(self, column_index):
         if column_index in [0, 2]:
             print("Maximul coloanei " + str(column_index) + " este: " + str(max(self.columns[column_index])))
-        else:
-            print(f"Nu se poate printa maximul pentru aceasta coloana: {column_index}")
 
     def quartiles(self, column_index):
         if column_index in [0, 2]:
@@ -77,8 +67,6 @@ class StatisticsUtils:
                   str(numpy.quantile(self.columns[column_index], .25)) + " " +
                   str(numpy.quantile(self.columns[column_index], .50)) + " " +
                   str(numpy.quantile(self.columns[column_index], .75)))
-        else:
-            print(f"Nu se pot printa cvartilele pentru aceasta coloana: {column_index}")
 
     def covariance(self):
         cov = numpy.cov(self.columns[0], self.columns[2])
