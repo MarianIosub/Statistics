@@ -17,7 +17,11 @@ class StatisticsUtils:
         self.columns = [self.ages, self.genders, self.IQs, self.nationalities]
 
     def read_csv_data(self, filepath):
-        file = open(filepath)
+        try:
+            file = open(filepath)
+        except FileNotFoundError:
+            print("File not found!")
+            return -1
         csv_reader = csv.reader(file)
         self.header = next(csv_reader)
         for row in csv_reader:

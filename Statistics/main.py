@@ -9,6 +9,8 @@ def main():
     else:
         text_file = sys.argv[1]
         stats = StatisticsUtils(text_file, sys.argv[2])
+        if not stats.header:
+            return
         stats.column_statistics(0)
 
 
